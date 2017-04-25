@@ -1,0 +1,147 @@
+body {
+    background: url(/assets/image/landscape-mountains-nature-lake-0.4.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(0,0,0,0.9);
+}
+
+#panel {
+    background-color: #FFFFFF;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);
+    padding: 0;
+    padding-bottom: 60px;
+}
+
+#top {
+    padding: 20px 0 5px 0;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+#left {
+    float: left;
+    display: inline-block;
+}
+
+#right {
+    float: right;
+    display: inline-block;
+}
+
+.text {
+    color: #5E5E5E;
+    font-family: Merriweather, serif;
+    font-size: 16px;
+    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.title-1 {
+    color: #2A2A2A;
+    font-family: Merriweather, serif;
+    font-size: 14px;
+    padding-left: 40px;
+    float: left;
+}
+
+.title-2 {
+    font-size: 27px;
+    font-family: Merriweather, serif;
+    color: #2A2A2A;
+}
+
+form {
+    padding-top: 40px;
+    padding-right: 40px;
+}
+
+#name, #email, #message {
+    color: #A1A1A1;
+    font-family: Merriweather, serif;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #F0F0F0;
+    border-radius: 4px;
+    border: none;
+}
+
+#name:focus, #email:focus, #message:focus {
+    background-color: #FFFFFF;
+    color: #3E3E3E;
+    border: 1px solid #979797;
+}
+
+#name, #email {
+    padding-left: 15px;
+    height: 45px;
+    max-width: 357.38px;
+}
+
+#message {
+    padding: 15px;
+    border: 1px solid #F0F0F0;
+    resize: none;
+    max-width: 511px;
+}
+
+/* gumb za pošiljanje sporočila */
+#button {
+    color: #FFFFFF;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    background-color: #4C8BB5;
+    border-radius: 4px;
+    height: 38.45px;
+    width: 147.78px;
+    margin-top: 10px;
+}
+
+#title {
+    display: inline-block;
+    float: left;
+}
+
+.alert {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#exit {
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+}
+
+.close {
+    opacity: 1;
+}
+
+/* "X" za izhod iz okna - 2 dela */
+#exitl {
+    height: 16px;
+    width: 2px;
+    margin-left: 12px;
+    background-color: #2A2A2A;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    Z-index: 1;
+}
+
+#exitr {
+    height: 16px;
+    width: 2px;
+    background-color: #2A2A2A;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    Z-index: 2;
+}
