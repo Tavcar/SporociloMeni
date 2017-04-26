@@ -1,29 +1,29 @@
 <?php
-require 'creds.php';
-require_once 'vendor/autoload.php';
+use google\appengine\api\mail\Message;
 
 if(isset($_POST["name"], $_POST["email"], $_POST["message"])) {
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $message = $_POST["message"];
+    $text = $_POST["message"];
     
     $headers = "Sporočilo od ".$name." (".$email.")";
-    $msg = "Sporočilo:\n$message";
+    $msg = "Sporočilo:\n$text";
     
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $alert = "Neveljaven email naslov! Prosim poskusite znova.";
     } else { 
-        $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
-          ->setUsername($username)
-          ->setPassword($password);
-
-        $mailer = \Swift_Mailer::newInstance($transport);
-
-        $message = \Swift_Message::newInstance($headers)
-          ->setFrom($email)
-          ->setTo($finalDestination)
-          ->setBody($msg);
-        $result = $mailer->send($message);
+        
+        try {
+            $message = new Message();
+            $message->setSender('mare185@gmail.com');
+            $message->addTo('mare185@gmail.com');
+            $message->setSubject($headers);
+            $message->setTextBody($msg);
+            $message->send();
+                        
+        } catch (InvalidArgumentException $e) {
+            $alert = 'Prišlo je do napake!';
+        }  
     }
 }
 ?>
@@ -84,7 +84,7 @@ if(isset($_POST["name"], $_POST["email"], $_POST["message"])) {
                 
                 <div class="col-xs-6" id="right">
                     <div class="alert">
-                        <?php if($alert) { echo $alert; } ?> <!-- alert, če neveljaven email -->
+                        <?php if($alert) { echo $alert; }  ?> <!-- alert, če neveljaven email/napaka -->
                     </div>
                 </div>
                 
